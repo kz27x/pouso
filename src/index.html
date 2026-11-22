@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="boot">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<!--FONTS-->
+<!--CSS-->
+</head>
+<body data-style="brasa" data-layout="canto">
+<!--BOOT-->
+<canvas id="wall" aria-hidden="true"></canvas>
+<canvas id="wall-fade" aria-hidden="true"></canvas>
+<div id="scrim" aria-hidden="true"></div>
+
+<main id="home" aria-label="Nova aba">
+  <header class="top">
+    <p class="date" id="date"></p>
+    <div class="top-actions">
+      <button class="kbd-hint" id="open-palette" type="button" aria-label="Busca rápida (Ctrl+K)"><span>Busca rápida</span><kbd>Ctrl</kbd><kbd>K</kbd></button>
+      <button class="icon-btn" id="open-sheet" type="button" aria-label="Ajustes (Ctrl+,)" aria-haspopup="dialog"></button>
+    </div>
+  </header>
+  <section class="hero" aria-live="off">
+    <p class="greet" id="greet"></p>
+    <div class="clock" id="clock" role="timer" aria-label=""></div>
+    <p class="date-under" id="date-under"></p>
+  </section>
+  <section class="side">
+    <form class="search" id="search" role="search" autocomplete="off">
+      <label class="sr" for="q">Buscar na web</label>
+      <span class="search-ico" aria-hidden="true"></span>
+      <input id="q" name="q" type="search" placeholder="Buscar na web" spellcheck="false">
+      <button type="submit" class="search-go" aria-label="Buscar"></button>
+    </form>
+    <nav class="favs" id="favs" aria-label="Favoritos"></nav>
+  </section>
+</main>
+
+<aside id="sheet" class="sheet" role="dialog" aria-modal="false" aria-labelledby="pane-title" hidden>
+  <div class="sheet-in">
+    <nav class="rail" id="rail" role="tablist" aria-label="Seções dos ajustes" aria-orientation="vertical"></nav>
+    <div class="pane" id="pane" role="tabpanel" tabindex="-1"></div>
+  </div>
+  <button class="icon-btn sheet-close" id="close-sheet" type="button" aria-label="Fechar ajustes"></button>
+</aside>
+
+<div id="palette" class="palette" role="dialog" aria-modal="true" aria-label="Busca rápida" hidden>
+  <div class="palette-box">
+    <div class="palette-field">
+      <span class="search-ico" aria-hidden="true"></span>
+      <input id="pq" type="text" role="combobox" aria-expanded="true" aria-controls="presults" aria-autocomplete="list" placeholder="Abas, favoritos, histórico ou um comando" spellcheck="false" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <ul id="presults" role="listbox" aria-label="Resultados"></ul>
+    <p class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>Enter</kbd> abrir</span><span>Tudo fica no seu computador.</span></p>
+  </div>
+</div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden></div>
+<div id="onboard" class="onboard" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!--JS-->
+</body>
+</html>

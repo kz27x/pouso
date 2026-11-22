@@ -1,0 +1,14 @@
+{
+ "name": {
+  "message": "Pouso — a home for your browser"
+ },
+ "desc": {
+  "message": "A unique, light new tab: living wallpapers, ready-made Editions, quick search and sleeping tabs. No account, no ads."
+ },
+ "action": {
+  "message": "Pouso quick search (Alt+K)"
+ },
+ "cmd": {
+  "message": "Open quick search on any site"
+ }
+}

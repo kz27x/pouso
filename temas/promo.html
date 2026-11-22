@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../dist/extensao/fonts.css"><style>
+html,body{margin:0;overflow:hidden;background:#000}
+.w{position:relative;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%}
+.t{position:absolute;color:#f6efed;font-family:Archivo;font-stretch:118%;letter-spacing:-.04em}
+.t b{font-weight:640}
+.s{position:absolute;color:#cdb7b2;font-family:Geist}
+.m{position:absolute}
+.m svg{width:100%;height:100%}
+.chip{position:absolute;font-family:Newsreader;font-style:italic;color:#2b2230}
+</style></head><body><div class="w" id="w"></div>
+<script>window.PousoPlatform={lang:'pt'}</script>
+<script src="../src/palette.js"></script><script src="../src/shaders.js"></script><script src="../src/renderer.js"></script>
+<script>
+const q=new URLSearchParams(location.search), kind=q.get('k'), en=q.get('l')==='en';
+const W=kind==='small'?440:1400, H=kind==='small'?280:560;
+w.style.width=W+'px'; w.style.height=H+'px';
+const mark=`<svg viewBox="0 0 24 24"><circle cx="12" cy="9.2" r="4.3" fill="#ec3a34"/><path d="M3.5 17.5h17" stroke="#f6efed" stroke-width="2.2" stroke-linecap="round"/></svg>`;
+const tag=en?'A home for your browser.':'A casa do seu navegador.';
+if(kind==='small'){
+  w.innerHTML=`<canvas id=cv width=${W*2} height=${H*2}></canvas><div class=m style="left:30px;top:30px;width:34px;height:34px">${mark}</div>
+  <div class=t style="left:30px;bottom:62px;font-size:64px"><b>Pouso</b></div><div class=s style="left:32px;bottom:34px;font-size:17px">${tag}</div>`;
+}else{
+  w.innerHTML=`<canvas id=cv width=${W} height=${H}></canvas><div class=m style="left:80px;top:74px;width:52px;height:52px">${mark}</div>
+  <div class=t style="left:76px;top:150px;font-size:150px;line-height:.9"><b>Pouso</b></div>
+  <div class=s style="left:82px;top:300px;font-size:30px;color:#f0dcd7">${tag}</div>
+  <div class=s style="left:82px;top:350px;font-size:19px;max-width:520px;line-height:1.5">${en?'Living wallpapers, ready-made Editions, quick search and tabs that sleep to save memory. No account, no ads.':'Papéis de parede vivos, Edições prontas, busca rápida e abas que dormem para economizar memória. Sem conta e sem propaganda.'}</div>`;
+}
+const P=PousoPalette.build('brasa','dark',25,.23);
+const r=new PousoGL.Renderer(cv,{fixed:true,preserve:true}); r.layout=kind==='small'?1:2;
+r.snapshot(PousoWalls.byId('b-eclipse'),[P.w0.lin,P.w1.lin,P.w2.lin,P.w3.lin],{energy:1,phase:.5,t:21});
+document.title='ok';
+</script></body></html>

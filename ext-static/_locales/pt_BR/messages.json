@@ -1,0 +1,14 @@
+{
+ "name": {
+  "message": "Pouso — a casa do seu navegador"
+ },
+ "desc": {
+  "message": "Nova aba única e leve: papéis de parede vivos, Edições prontas, busca rápida e abas que dormem. Sem conta e sem propaganda."
+ },
+ "action": {
+  "message": "Busca rápida do Pouso (Alt+K)"
+ },
+ "cmd": {
+  "message": "Abrir a busca rápida em qualquer site"
+ }
+}
